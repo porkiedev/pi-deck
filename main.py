@@ -154,7 +154,6 @@ class PiDeckWidget(QWidget):
 
 
 if __name__ == "__main__":
-    # main()
     application = QApplication(sys.argv)
     application.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
