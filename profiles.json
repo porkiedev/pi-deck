@@ -1,0 +1,81 @@
+{
+  "_default": {
+    "1": {
+      "profile_name": "test_prof",
+      "db_version": 1,
+      "display_settings": {
+        "width": 480,
+        "height": 320
+      },
+      "button_matrix_settings": {
+        "button_size": {
+          "width": 90,
+          "height": 90
+        },
+        "matrix_size": {
+          "columns": 4,
+          "rows": 3
+        },
+        "fixed_button_size_enabled": false
+      },
+      "root_button_folder": {
+        "00": {
+          "icon": "mute.png",
+          "enabled": true,
+          "folder": false,
+          "module_name": "media_controls",
+          "function_name": "media_volume_mute"
+        },
+        "10": {
+          "icon": "rewind.png",
+          "enabled": true,
+          "folder": false,
+          "module_name": "media_controls",
+          "function_name": "media_previous"
+        },
+        "20": {
+          "icon": "play.png",
+          "enabled": true,
+          "folder": false,
+          "module_name": "media_controls",
+          "function_name": "media_play_pause"
+        },
+        "30": {
+          "icon": "forward.png",
+          "enabled": true,
+          "folder": false,
+          "module_name": "media_controls",
+          "function_name": "media_next"
+        },
+        "01": {
+          "icon": "forward.png",
+          "enabled": true,
+          "folder": true,
+          "button_folder": {
+            "10": {
+              "icon": "play.png",
+              "enabled": true,
+              "folder": false,
+              "module_name": "media_controls",
+              "function_name": "media_play_pause"
+            },
+            "20": {
+              "icon": "play.png",
+              "enabled": true,
+              "folder": true,
+              "button_folder": {
+                "01": {
+                  "icon": "forward.png",
+                  "enabled": true,
+                  "folder": false,
+                  "module_name": "media_controls",
+                  "function_name": "media_next"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
