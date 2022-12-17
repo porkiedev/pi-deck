@@ -45,9 +45,15 @@ def create_new_profile(profile_name="Untitled Profile"):
             "height": 320
         },
         "button_matrix_settings": {
+            "icons_path": "icons/",
+            "button_spacing": 10,
             "button_size": {
                 "width": 90,
                 "height": 90
+            },
+            "icon_size": {
+                "width": 512,
+                "height": 512,
             },
             "matrix_size": {
                 "columns": 4,
