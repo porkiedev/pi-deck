@@ -48,7 +48,7 @@ class PiDeckWidget(QWidget):
                 # ^Set button and icon size
                 if button_key == "00" and len(self.path_tree) > 1:
                     print("Hit button 00 and inside of a folder. Ignoring profile and creating back button instead.")
-                    button.setIcon(QIcon(self.profile["button_matrix_settings"]["icons_path"] + "backwards.png"))
+                    button.setIcon(QIcon(self.profile["button_matrix_settings"]["icons_path"] + "folder_back.png"))
                     # ^Force a back icon, this is mandatory so the user can exit a folder
                     button.clicked.connect(lambda ch, k=button_key, f=folder: self.button_handler(k, f))
                     self.layout.addWidget(button, row, column, Qt.AlignCenter)
@@ -87,11 +87,12 @@ class PiDeckWidget(QWidget):
                     self.path_tree += [button_key, "button_folder"]
                     self.generate_buttons(current_folder[button_key]["button_folder"])
                 # ^If button is folder, generate new buttons from inside of folder
-                button_module_name = current_folder[button_key]["module_name"]
-                button_function_name = current_folder[button_key]["function_name"]
-                print(self.button_press_handler_name + "The key at " + button_key + " was pressed. Sending "
-                      + button_module_name + "/" + button_function_name)
-                client_networking.send_request(button_module_name, button_function_name)
+                args = {
+                    "module_name": current_folder[button_key]["module_name"],
+                    "function_name": current_folder[button_key]["function_name"]
+                }
+                print(self.button_press_handler_name + "The key at " + button_key + " was pressed. Sending " + str(args))
+                client_networking.send_message(args)
                 # ^Use client networking backend to inform server of button press
             else:
                 raise KeyError
