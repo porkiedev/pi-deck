@@ -62,8 +62,15 @@
                   "icon": "forward.png",
                   "enabled": true,
                   "folder": false,
-                  "module_name": "media_controls",
-                  "function_name": "media_next"
+                  "module_name": "keybind_macros",
+                  "function_name": "press_keybind",
+                  "args": {
+                    "keys": [
+                      "shift",
+                      "alt",
+                      "z"
+                    ]
+                  }
                 }
               }
             }
